@@ -1,3 +1,6 @@
+// Version 1.01 - Git update 1
+// by KeikoWare
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <stdio.h>
