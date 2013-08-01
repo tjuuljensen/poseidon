@@ -1,3 +1,6 @@
 Poseidon - The Tank Monitor Application
 
-Test by KeikoWare
+README
+
+Wiki:
+https://github.com/tjuuljensen/poseidon/wiki
