@@ -239,6 +239,7 @@ void co2calulation(void)
 		lastKH = atof(row[0]);
 	}
 	mysql_free_result(result); 
+	free(row); // new line
 // read PH from sensor 4 last input
 	strcpy(strSQL, "SELECT calculated FROM sensorreading where sensor_id = 4 order by ts desc limit 0,1;");
 	mysql_query(&mysql,strSQL);
@@ -248,6 +249,7 @@ void co2calulation(void)
 		lastPH = atof(row[0]);
 	}
 	mysql_free_result(result); 
+	free(row); // new line
 // read temp from sensor 3 last input
 	strcpy(strSQL, "SELECT calculated FROM sensorreading where sensor_id = 3 order by ts desc limit 0,1;");
 	mysql_query(&mysql,strSQL);
@@ -257,6 +259,7 @@ void co2calulation(void)
 		lastTemp = atof(row[0]);
 	}
 	mysql_free_result(result); 
+	free(row); // new line
 	
 	tmp = 6.56260603 * pow(0.99869335, lastTemp);
 	tmp = 15.664 * lastKH * pow(10, (tmp-lastPH));
@@ -348,9 +351,6 @@ void initPi(void){
 	digitalWrite(outletDataPin, 0);	
 	pinMode(outletLatchPin, OUTPUT);
 	digitalWrite(outletDataPin, 0);	
-
-	
-
 	getMac();
 	printf("%d:%d:%d:%d:%d:%d\n", mac_address[0], mac_address[1], mac_address[2], mac_address[3], mac_address[4], mac_address[5]);
 }
@@ -370,10 +370,11 @@ void main_loop(void)
 	
 		printf("READING SENSORS\n");
 		//read sensors
-		lightReading(); // memory safe
-		tempReading(); // memory safe
-		phReading(); // memory safe
-		co2calulation(); // memory safe
+		// to find memory leak we activate one at a time, starting of with all disabled
+		//lightReading(); // testing
+		//tempReading(); // testing
+		//phReading(); // testing
+		//co2calulation(); // testing
 		
 		//Read new values from mysql
 		printf("READING MySQL\n");
