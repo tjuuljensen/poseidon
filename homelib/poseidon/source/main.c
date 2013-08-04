@@ -237,9 +237,9 @@ void co2calulation(void)
 	if(result){
 		MYSQL_ROW row = mysql_fetch_row(result);
 		lastKH = atof(row[0]);
+//		free(row); // new line
 	}
 	mysql_free_result(result); 
-	free(row); // new line
 // read PH from sensor 4 last input
 	strcpy(strSQL, "SELECT calculated FROM sensorreading where sensor_id = 4 order by ts desc limit 0,1;");
 	mysql_query(&mysql,strSQL);
@@ -247,9 +247,9 @@ void co2calulation(void)
 	if(result){
 		MYSQL_ROW row = mysql_fetch_row(result);
 		lastPH = atof(row[0]);
+//		free(row); // new line
 	}
 	mysql_free_result(result); 
-	free(row); // new line
 // read temp from sensor 3 last input
 	strcpy(strSQL, "SELECT calculated FROM sensorreading where sensor_id = 3 order by ts desc limit 0,1;");
 	mysql_query(&mysql,strSQL);
@@ -257,9 +257,9 @@ void co2calulation(void)
 	if(result){
 		MYSQL_ROW row = mysql_fetch_row(result);
 		lastTemp = atof(row[0]);
+//		free(row); // new line
 	}
 	mysql_free_result(result); 
-	free(row); // new line
 	
 	tmp = 6.56260603 * pow(0.99869335, lastTemp);
 	tmp = 15.664 * lastKH * pow(10, (tmp-lastPH));
@@ -371,10 +371,10 @@ void main_loop(void)
 		printf("READING SENSORS\n");
 		//read sensors
 		// to find memory leak we activate one at a time, starting of with all disabled
-		//lightReading(); // testing
-		//tempReading(); // testing
-		//phReading(); // testing
-		//co2calulation(); // testing
+		lightReading(); // testing
+		tempReading(); // testing
+		phReading(); // testing
+		co2calulation(); // testing
 		
 		//Read new values from mysql
 		printf("READING MySQL\n");
@@ -394,6 +394,7 @@ void main_loop(void)
 
 int main(void)
 {
+
        // Our process ID and Session ID 
         pid_t pid, sid;
         
@@ -416,24 +417,23 @@ int main(void)
         // Create a new SID for the child process
         sid = setsid();
         if (sid < 0) {
-                /* Log the failure */
+                // Log the failure 
                 exit(EXIT_FAILURE);
         }
         
         // Change the current working directory
         if ((chdir("/")) < 0) {
-                /* Log the failure */
+                // Log the failure
                 exit(EXIT_FAILURE);
         }
         
-        /* Close out the standard file descriptors */
+        // Close out the standard file descriptors 
         close(STDIN_FILENO);
         close(STDOUT_FILENO);
         close(STDERR_FILENO);
         
-        /* Daemon-specific initialization goes here */
-       
-		
+        // Daemon-specific initialization goes here 
+ 
 	/* The Big Loop */
 	initPi();
 	main_loop();
