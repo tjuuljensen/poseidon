@@ -1,7 +1,7 @@
 // Version 1.01 - Git update 1
 // by KeikoWare
 
-// testcommit to memryleak branch
+// testcommit to memoryleak branch
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -219,7 +219,7 @@ void phReading(void)
 	
 }
 
-void co2calulation(void)
+void co2calculation(void)
 {
 	char strSQL[500];
 	char strCO2[50];
@@ -359,24 +359,25 @@ void initPi(void){
 
 void main_loop(void)
 {
+	// MYSQL initialisering
+	mysql_init(&mysql);
+	if (!mysql_real_connect(&mysql,"localhost","poseidonUSER","poseidon","poseidondb",0,NULL,0))
+	{
+		fprintf(stderr, "Failed to connect to database: Error: %s\n", mysql_error(&mysql));
+		exit(EXIT_FAILURE);
+	}
+	printf("SUCCES :) to connect to database: \n");
+
 	for(;;)
 	{
-		// MYSQL initialisering
-		mysql_init(&mysql);
-		if (!mysql_real_connect(&mysql,"localhost","poseidonUSER","poseidon","poseidondb",0,NULL,0))
-		{
-			fprintf(stderr, "Failed to connect to database: Error: %s\n", mysql_error(&mysql));
-			exit(EXIT_FAILURE);
-		}
-		printf("SUCCES :) to connect to database: \n");
 	
 		printf("READING SENSORS\n");
 		//read sensors
 		// to find memory leak we activate one at a time, starting of with all disabled
-		lightReading(); // testing
-		tempReading(); // testing
-		phReading(); // testing
-		co2calulation(); // testing
+		lightReading(); // Memory stable 32 byte extra
+		tempReading(); // Memory stable 28 byte extra
+//		phReading(); // testing
+//		co2calculation(); // testing
 		
 		//Read new values from mysql
 		printf("READING MySQL\n");
@@ -442,4 +443,3 @@ int main(void)
 
    exit(EXIT_SUCCESS);
 }
-
