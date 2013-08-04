@@ -44,7 +44,6 @@ int outletDataPin  = 1; // GPIO pin 18 -> DS
 int outletClockPin = 4; // GPIO pin 23 -> SHCP
 int outletLatchPin = 5; // GPIO pin 24 -> STCP
 
-
 MYSQL mysql;
 
 void lightReading(void)
@@ -239,19 +238,21 @@ void co2calculation(void)
 	if(result){
 		MYSQL_ROW row = mysql_fetch_row(result);
 		lastKH = atof(row[0]);
-//		free(row); // new line
+		row = NULL; // new line
 	}
 	mysql_free_result(result); 
-// read PH from sensor 4 last input
+
+	// read PH from sensor 4 last input
 	strcpy(strSQL, "SELECT calculated FROM sensorreading where sensor_id = 4 order by ts desc limit 0,1;");
 	mysql_query(&mysql,strSQL);
 	result = mysql_store_result(&mysql);
 	if(result){
 		MYSQL_ROW row = mysql_fetch_row(result);
 		lastPH = atof(row[0]);
-//		free(row); // new line
+		row = NULL; // new line
 	}
 	mysql_free_result(result); 
+
 // read temp from sensor 3 last input
 	strcpy(strSQL, "SELECT calculated FROM sensorreading where sensor_id = 3 order by ts desc limit 0,1;");
 	mysql_query(&mysql,strSQL);
@@ -259,10 +260,11 @@ void co2calculation(void)
 	if(result){
 		MYSQL_ROW row = mysql_fetch_row(result);
 		lastTemp = atof(row[0]);
-//		free(row); // new line
+		row = NULL; // new line
 	}
 	mysql_free_result(result); 
 	
+// 
 	tmp = 6.56260603 * pow(0.99869335, lastTemp);
 	tmp = 15.664 * lastKH * pow(10, (tmp-lastPH));
 	
@@ -308,10 +310,7 @@ void update_ouput(void)
 	digitalWrite(outletLatchPin,0);
 	delay(1);
 	printf("Outlet status  -> %d:%d:%d:%d:%d\n", outlet[1], outlet[2], outlet[3], outlet[4], outlet[5]);
-
 }
-
-
 
 void readmysql(void){
 
@@ -377,22 +376,23 @@ void main_loop(void)
 		lightReading(); // Memory stable 32 byte extra (1764b)
 		tempReading(); // Memory stable 28 byte extra (1792b)
 		phReading(); // Memory stable 16 byte extra (1808b)
-		co2calculation(); // Memory stable 44 byte extra (1852b)
+		co2calculation(); // Memory UNstable 44 byte extra (1856b) +4 after
 		
 		//Read new values from mysql
 		printf("READING MySQL\n");
 		readmysql();
 		
+		// DETERMINING OUTPUT ON BASIS OF SENSORS AND TRESHHOLDS
+		// calculate_output();
+
 		//update output switches
 		printf("UPDATING OUTPUT\n");
 		update_ouput();
  
-		
 		//wait a while
 		delay(5000);
 		printf("\n");
 	}
-
 }
 
 int main(void)
