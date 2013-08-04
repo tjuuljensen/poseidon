@@ -377,7 +377,7 @@ void main_loop(void)
 		lightReading(); // Memory stable 32 byte extra (1764b)
 		tempReading(); // Memory stable 28 byte extra (1792b)
 		phReading(); // Memory stable 16 byte extra (1808b)
-//		co2calculation(); // testing
+		co2calculation(); // Memory stable 44 byte extra (1852b)
 		
 		//Read new values from mysql
 		printf("READING MySQL\n");
