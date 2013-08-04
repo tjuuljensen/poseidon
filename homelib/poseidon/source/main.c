@@ -175,6 +175,24 @@ void phReading(void)
 	float tmp;
 	int fd ;
 
+	// pH reading is temperature dependent - the temperature will be read from DB
+	// read temp from sensor 3 last input
+	float lastTemp;
+	char strSerielCommand[5];
+	MYSQL_RES *result;
+	
+	strcpy(strSQL, "SELECT calculated FROM sensorreading where sensor_id = 3 order by ts desc limit 0,1;");
+	mysql_query(&mysql,strSQL);
+	result = mysql_store_result(&mysql);
+	if(result){
+		MYSQL_ROW row = mysql_fetch_row(result);
+		lastTemp = atof(row[0]);
+		row = NULL; // new line
+	}
+	mysql_free_result(result);
+	sprintf(strSerielCommand,"%00.2f", lastTemp);
+	printf("pH temperature calibration: %s\n",strSerielCommand);
+	
 	// serial initialisering
 	if ((fd = serialOpen ("/dev/ttyAMA0", 38400)) < 0)
 	{
@@ -186,9 +204,11 @@ void phReading(void)
 	{
 		printf ("pH read: %3d: ", count) ;
 		fflush (stdout) ;
-		serialPuts (fd, "R\r") ;
+		serialPuts (fd, strSerielCommand) ; // first send temperature (Atlas pH module v 4.0)
+		delay (3000);
+		serialPuts (fd, "R\r") ; // then send R(ead) to get the temperaturecorrected ouput
+		delay (3000);
 		++count ;
-		delay (1000) ;
 		charCount = 0;
 		while (serialDataAvail (fd))
 		{
@@ -199,6 +219,8 @@ void phReading(void)
 		}
 		printf("\n");
 	}
+	
+	
 	
 	strcpy(strSQL,"INSERT INTO sensorreading (sensor_id, tank_id, ts, reading, calculated) VALUES (4, 1, NOW(),");
 	tmp = atof(strPH);
