@@ -374,9 +374,9 @@ void main_loop(void)
 		printf("READING SENSORS\n");
 		//read sensors
 		// to find memory leak we activate one at a time, starting of with all disabled
-		lightReading(); // Memory stable 32 byte extra
-		tempReading(); // Memory stable 28 byte extra
-//		phReading(); // testing
+		lightReading(); // Memory stable 32 byte extra (1764b)
+		tempReading(); // Memory stable 28 byte extra (1792b)
+		phReading(); // Memory stable 16 byte extra (1808b)
 //		co2calculation(); // testing
 		
 		//Read new values from mysql
