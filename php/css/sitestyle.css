@@ -8,7 +8,7 @@ body
 .backbutton {
 	position: relative;
 	z-index: 20;
-	background-image: url(../image/back.gif);
+	background-image: url(../img/back.gif);
 	height: 100px;
 	width: 100px;
 	float: right;
@@ -19,7 +19,7 @@ body
 .dot {
 	position: absolute;
 	z-index: 10;
-	background-image: url(../image/dot.gif);
+	background-image: url(../img/dot.gif);
 	height: 16px;
 	width: 16px;
 }
@@ -27,7 +27,7 @@ body
 .dot_grey {
 	position: absolute;
 	z-index: 10;
-	background-image: url(../image/dot_grey.gif);
+	background-image: url(../img/dot_grey.gif);
 	height: 16px;
 	width: 16px;
 }
@@ -35,7 +35,7 @@ body
 .dot_green {
 	position: absolute;
 	z-index: 10;
-	background-image: url(../image/dot_green.gif);
+	background-image: url(../img/dot_green.gif);
 	height: 16px;
 	width: 16px;
 }
@@ -43,7 +43,7 @@ body
 .dot_yellow {
 	position: absolute;
 	z-index: 10;
-	background-image: url(../image/dot_yellow.gif);
+	background-image: url(../img/dot_yellow.gif);
 	height: 16px;
 	width: 16px;
 }
@@ -51,7 +51,7 @@ body
 .dot_red {
 	position: absolute;
 	z-index: 10;
-	background-image: url(../image/dot_red.gif);
+	background-image: url(../img/dot_red.gif);
 	height: 16px;
 	width: 16px;
 }
@@ -121,7 +121,7 @@ body
 }
 .infosquare_large_pwr {
 	float: left;
-	background-image: url(../image/outlet.gif);
+	background-image: url(../img/outlet.gif);
 	height: 76px;
 	width: 76px;
 	position: absolute;
@@ -130,7 +130,7 @@ body
 }
 .infosquare_large_pwr_green {
 	float: left;
-	background-image: url(../image/outlet_green.gif);
+	background-image: url(../img/outlet_green.gif);
 	height: 76px;
 	width: 76px;
 	position: absolute;
@@ -138,7 +138,7 @@ body
 	visibility: visible;
 }.infosquare_large_pwr_red {
 	float: left;
-	background-image: url(../image/outlet_red.gif);
+	background-image: url(../img/outlet_red.gif);
 	height: 76px;
 	width: 76px;
 	position: absolute;
@@ -146,7 +146,7 @@ body
 	visibility: visible;
 }.infosquare_large_pwr_yellow {
 	float: left;
-	background-image: url(../image/outlet_yellow.gif);
+	background-image: url(../img/outlet_yellow.gif);
 	height: 76px;
 	width: 76px;
 	position: absolute;
@@ -259,7 +259,7 @@ body
 	float: left;
 	position: relative;
 	cursor: pointer;
-	background-image: url(../image/outlet.gif);
+	background-image: url(../img/outlet.gif);
 	height: 76px;
 	width: 76px;
 }
@@ -267,7 +267,7 @@ body
 	float: left;
 	position: relative;
 	cursor: pointer;
-	background-image: url(../image/outlet_grey.gif);
+	background-image: url(../img/outlet_grey.gif);
 	height: 76px;
 	width: 76px;
 }
@@ -279,7 +279,7 @@ body
 	float: left;
 	position: relative;
 	cursor: pointer;
-	background-image: url(../image/outlet_green.gif);
+	background-image: url(../img/outlet_green.gif);
 	height: 76px;
 	width: 76px;
 }
@@ -290,7 +290,7 @@ body
 	float: left;
 	position: relative;
 	cursor: pointer;
-	background-image: url(../image/outlet_yellow.gif);
+	background-image: url(../img/outlet_yellow.gif);
 	height: 76px;
 	width: 76px;
 }
@@ -301,7 +301,7 @@ body
 	float: left;
 	position: relative;
 	cursor: pointer;
-	background-image: url(../image/outlet_red.gif);
+	background-image: url(../img/outlet_red.gif);
 	height: 76px;
 	width: 76px;
 }
