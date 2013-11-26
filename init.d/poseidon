@@ -11,11 +11,11 @@
 
 case "$1" in
   start)
-	echo "STARTING poseiodn daemon"
+	echo "STARTING poseidon daemon"
 	/home/pi/poseidon/bin/poseidon
 	;;
   stop)
-	echo "STOPPPING poseiodn daemon"
+	echo "STOPPPING poseidon daemon"
 	pkill poseidon
 	;;
   restart)
