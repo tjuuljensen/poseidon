@@ -253,8 +253,8 @@ void co2calculation(void)
 	float lastPH;
 	MYSQL_RES *result;
 	
-// read KH from sensor 6 last input
-	strcpy(strSQL, "SELECT calculated FROM sensorreading where sensor_id = 6 order by ts desc limit 0,1;");
+// read KH from environment table
+	strcpy(strSQL, "SELECT value FROM poseidondb.environment WHERE etype='KH' AND tank_id=1 order by tank_id desc limit 0,1; ");
 	mysql_query(&mysql,strSQL);
 	result = mysql_store_result(&mysql);
 	if(result){
