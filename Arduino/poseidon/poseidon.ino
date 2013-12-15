@@ -29,47 +29,42 @@ PIN layout:
 #include <EEPROM.h>
 
 #define MAXEEPROMADDR E2END //Defines last EEPROM address
-const byte GREENPIN=6;
-const byte REDPIN=5;
-const byte BLUEPIN=3;
-const byte WHITEPIN=9;
+#define GREENPIN 6
+#define REDPIN 5
+#define BLUEPIN 3
+#define WHITEPIN 9
 
-const byte WHITE=0;
-const byte GREEN=1;
-const byte RED=2;
-const byte BLUE=3;
-
-//#define FADESPEED 20     // make this higher to slow down
+#define WHITE 0
+#define GREEN 1
+#define RED 2 
+#define BLUE 3
 
 // Set LED variables
-//	int FadeSpeed = 20;
 	const byte numberOfLeds = 4; //number of LEDS connected to system
 	byte ledPin[numberOfLeds] = {WHITEPIN, GREENPIN, REDPIN, BLUEPIN}; //initialize array to hold number of LEDS connected to system
-	byte ledState[numberOfLeds];
-	bool ledTimerActive[numberOfLeds];
-	byte ledTargetBrightness[numberOfLeds];
-	int ledTimerStep[numberOfLeds];
-	//unsigned long ledControlStep[numberOfLeds]; //Unsigned long cause it is going to be used in a calculation
+	byte ledState[numberOfLeds]; //Holds the last set brightness of the actual LED
+	bool ledTimerActive[numberOfLeds]; // Variable to control whether a timer action is active
+	byte ledTargetBrightness[numberOfLeds]; //Controls the "to be" value of the LED
+	int ledTimerStep[numberOfLeds]; // Number of milliseconds from now until a certain target state is accomplished for a LED
 	byte ledControlOperator[numberOfLeds]; //Stores -1 or 1, used for controlling LED direction
-    unsigned long ledTimerPrevious[numberOfLeds]; //Set Time calculation variables
-    unsigned long ledTimerCurrent[numberOfLeds];
+    unsigned long ledTimerPrevious[numberOfLeds]; //Last registered time - used for controlling LED timer actions
+    unsigned long ledTimerCurrent[numberOfLeds]; //Current time - used for controlling LED timer actions
 
 
 void setup() {
-  // Initialize device
-  // Set OUTPUT on LED pins
-  for (int myLed = 0; myLed < numberOfLeds; myLed++)  {
-    pinMode(ledPin[myLed], OUTPUT);      
-     ledTimerActive[myLed]=false;  //Initialize LED timerActive  
-     setled(myLed, 0); //Turn off All LEDs
-     ledTargetBrightness[myLed]=0;
-     ledState[myLed]=0;
-     ledTimerPrevious[myLed]=0;
-     ledControlOperator[myLed]=0; 
-   }
+
+  initLED();
+  setTestData();
   
-  //TEST
-  //Start LED job
+}
+
+void loop() {
+
+  ledActions();
+  
+}
+
+void setTestData(){
   // Make white G=160, R=230, B=255)
   
   setled(WHITE,255);
@@ -80,25 +75,20 @@ void setup() {
   setledtimer(RED, 10, 60) ;
   setledtimer(BLUE, 70, 60);
 }
-
-void loop() {
-  // Code to be run repeatedly
-
-	//Loop through the different LEDs and set their brightness if ledTimerActive is true
-	for (int myLed = 0; myLed < numberOfLeds; myLed++)  {
-		if (ledTimerActive[myLed]) {
-			ledTimerCurrent[myLed]=millis();
-			if(ledTimerCurrent[myLed]-ledTimerPrevious[myLed]>ledTimerStep[myLed]) {
-				int newLedState=ledState[myLed]+ledControlOperator[myLed];
-				setled(myLed,newLedState);
-				ledTimerPrevious[myLed]=ledTimerCurrent[myLed];
-				if (ledState[myLed]==ledTargetBrightness[myLed]) ledTimerActive[myLed]=false;
-			}
-		}
-	}
-	
-}
-
+  
+void initLED(){
+  
+  // Set OUTPUT on LED pins
+  for (int myLed = 0; myLed < numberOfLeds; myLed++)  {
+    pinMode(ledPin[myLed], OUTPUT);      
+     ledTimerActive[myLed]=false;  //Initialize LED timerActive  
+     setled(myLed, 0); //Turn off All LEDs
+	 ledState[myLed]=0; //Set LED state to match LEDs
+     ledTargetBrightness[myLed]=0;
+     ledTimerPrevious[myLed]=0;
+     ledControlOperator[myLed]=0; 
+   }
+  }
 
 void setled(byte myLedId, byte brightness) {
 	//Sets the brightness of the LED and stores the LED state (the current brightness) in a variable
@@ -140,7 +130,22 @@ void setrgb(byte r, byte g, byte b) {
 	setled(BLUE, b);
 
 }
-	
+
+void ledActions() {
+  	//Loop through the different LEDs and set their brightness if ledTimerActive is true
+	for (int myLed = 0; myLed < numberOfLeds; myLed++)  {
+		if (ledTimerActive[myLed]) {
+			ledTimerCurrent[myLed]=millis();
+			if(ledTimerCurrent[myLed]-ledTimerPrevious[myLed]>ledTimerStep[myLed]) {
+				int newLedState=ledState[myLed]+ledControlOperator[myLed];
+				setled(myLed,newLedState);
+				ledTimerPrevious[myLed]=ledTimerCurrent[myLed];
+				if (ledState[myLed]==ledTargetBrightness[myLed]) ledTimerActive[myLed]=false;
+			}
+		}
+	}
+  }
+  
 void readtemp() {
 	//read temperature input using onewire protocol
 }
@@ -188,7 +193,6 @@ void cleareeprom() {
     
   // TEST: turn the LED on when done clearing EEPROM
   // digitalWrite(13, HIGH);
-  
 }
 
 void loadeepromsettings() {
