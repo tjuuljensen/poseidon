@@ -45,8 +45,8 @@ PIN layout:
 	byte ledState[numberOfLeds]; //Holds the last set brightness of the actual LED
 	bool ledTimerActive[numberOfLeds]; // Variable to control whether a timer action is active
 	byte ledTargetBrightness[numberOfLeds]; //Controls the "to be" value of the LED
-	int ledTimerStep[numberOfLeds]; // Number of milliseconds from now until a certain target state is accomplished for a LED
 	byte ledControlOperator[numberOfLeds]; //Stores -1 or 1, used for controlling LED direction
+	int ledTimerStep[numberOfLeds]; // Number of milliseconds from now until a certain target state is accomplished for a LED
     unsigned long ledTimerPrevious[numberOfLeds]; //Last registered time - used for controlling LED timer actions
     unsigned long ledTimerCurrent[numberOfLeds]; //Current time - used for controlling LED timer actions
 
@@ -67,13 +67,13 @@ void loop() {
 void setTestData(){
   // Make white G=160, R=230, B=255)
   
-  setled(WHITE,255);
+  setled(WHITE,20);
   setrgb(230,160,255);
   
-  setledtimer(WHITE, 1, 10) ;
-  setledtimer(GREEN, 0, 60) ;
-  setledtimer(RED, 10, 60) ;
-  setledtimer(BLUE, 70, 60);
+  setledtimer(WHITE, 255, 30) ;
+  setledtimer(GREEN, 160, 60) ;
+  setledtimer(RED, 230, 60) ;
+  setledtimer(BLUE, 255, 120);
 }
   
 void initLED(){
