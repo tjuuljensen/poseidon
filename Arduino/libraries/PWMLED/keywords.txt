@@ -1,0 +1,29 @@
+#######################################
+# Syntax Coloring Map For LEDs
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PWMLED	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+on	KEYWORD2
+off	KEYWORD2
+setBrightness	KEYWORD2
+getState	KEYWORD2
+timerActive	KEYWORD2
+setFadeTimer	KEYWORD2
+checkTimerActions	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+DEBUG_LED	LITERAL1
+
+
