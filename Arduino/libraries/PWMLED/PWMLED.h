@@ -34,6 +34,4 @@ class PWMLED{
     unsigned long ledTimerCurrent; //Current time - used for controlling LED timer actions
 };
 
-extern PWMLED DEBUG_LED;
-
 #endif
