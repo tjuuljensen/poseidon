@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="42.175px" height="56.083px" viewBox="0 0 42.175 56.083" enable-background="new 0 0 42.175 56.083" xml:space="preserve">
+<rect fill="#ED1C24" width="42.175" height="56.083"/>
+<path fill="#8C8C8C" d="M16.534,3.961c0,1.589-1.288,2.877-2.877,2.877c-1.589,0-2.877-1.288-2.877-2.877s1.288-2.877,2.877-2.877
+	C15.246,1.084,16.534,2.373,16.534,3.961"/>
+<path fill="#8C8C8C" d="M23.965,3.961c0,1.589-1.289,2.877-2.877,2.877c-1.589,0-2.878-1.288-2.878-2.877s1.288-2.877,2.878-2.877
+	C22.676,1.084,23.965,2.373,23.965,3.961"/>
+<path fill="#8C8C8C" d="M31.352,3.961c0,1.589-1.288,2.877-2.877,2.877c-1.589,0-2.878-1.288-2.878-2.877s1.289-2.877,2.878-2.877
+	C30.063,1.084,31.352,2.373,31.352,3.961"/>
+<path fill="#8C8C8C" d="M16.534,52.197c0,1.589-1.288,2.877-2.877,2.877c-1.589,0-2.877-1.288-2.877-2.877
+	c0-1.589,1.288-2.877,2.877-2.877C15.246,49.32,16.534,50.608,16.534,52.197"/>
+<path fill="#8C8C8C" d="M23.965,52.199c0,1.588-1.289,2.877-2.877,2.877c-1.589,0-2.878-1.288-2.878-2.877
+	c0-1.589,1.288-2.877,2.878-2.877C22.676,49.322,23.965,50.61,23.965,52.199"/>
+<path fill="#8C8C8C" d="M31.563,52.199c0,1.588-1.289,2.877-2.877,2.877s-2.877-1.288-2.877-2.877c0-1.589,1.288-2.877,2.877-2.877
+	C30.274,49.322,31.563,50.61,31.563,52.199"/>
+<rect x="2.919" y="13.636" fill="#FFFFFF" width="12.867" height="8.679"/>
+<rect x="2.919" y="13.636" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" width="12.867" height="8.679"/>
+<rect x="20.254" y="13.636" width="16.441" height="14.577"/>
+<text transform="matrix(1 0 0 1 10.3306 10.2705)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.8593">GND</text>
+<text transform="matrix(1 0 0 1 19.3008 10.2705)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.8593">TX</text>
+<text transform="matrix(1 0 0 1 27.1045 10.269)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.8593">RX</text>
+<text transform="matrix(1 0 0 1 10.7803 48.5703)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.8593">VCC</text>
+<text transform="matrix(1 0 0 1 18.2734 48.5703)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.8593">PRB</text>
+<text transform="matrix(1 0 0 1 25.3877 48.5703)" fill="#FFFFFF" font-family="'DroidSans'" font-size="2.8593">GND</text>
+<rect x="30.171" y="34.643" fill="#D1D3D4" width="1.608" height="2.216"/>
+<rect x="38.632" y="34.643" fill="#D1D3D4" width="1.608" height="2.216"/>
+<rect x="30.171" y="41.91" fill="#D1D3D4" width="1.608" height="2.215"/>
+<rect x="34.401" y="41.848" fill="#D1D3D4" width="1.608" height="2.216"/>
+<rect x="38.632" y="41.848" fill="#D1D3D4" width="1.608" height="2.216"/>
+<rect x="30.171" y="36.582" width="10.07" height="5.692"/>
+<g>
+	<rect x="2.019" y="35.988" fill="#D1D3D4" width="2.518" height="1.261"/>
+	<rect x="2.019" y="37.714" fill="#D1D3D4" width="2.518" height="1.262"/>
+	<rect x="2.019" y="39.465" fill="#D1D3D4" width="2.518" height="1.261"/>
+	<rect x="4.588" y="35.13" width="15.553" height="8.276"/>
+	<rect x="2.019" y="41.218" fill="#D1D3D4" width="2.518" height="1.261"/>
+	<rect x="20.141" y="36.022" fill="#D1D3D4" width="2.518" height="1.262"/>
+	<rect x="20.141" y="37.749" fill="#D1D3D4" width="2.518" height="1.262"/>
+	<rect x="20.141" y="39.5" fill="#D1D3D4" width="2.518" height="1.261"/>
+	<rect x="20.141" y="41.252" fill="#D1D3D4" width="2.518" height="1.262"/>
+</g>
+<g>
+	<path fill="#FFFFFF" d="M8.036,24.261c0,0-1.709,2.227,0,3.95C8.378,27.78,9.611,26.345,8.036,24.261"/>
+	<path fill="#FFFFFF" d="M12.518,28.937l-3.38-3.605c0.544,1.02,0.853,2.411-0.387,3.631l2.225,1.618L12.518,28.937z"/>
+	<polygon fill="#FFFFFF" points="8.057,29.68 5.867,31.36 8.057,33.696 10.259,31.346 	"/>
+	<path fill="#FFFFFF" d="M7.353,29.021c0,0-1.514-1.465-0.321-3.75l-3.437,3.666l1.58,1.684L7.353,29.021z"/>
+</g>
+<rect x="0.745" y="47.862" fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" width="8.442" height="8.221"/>
+<text transform="matrix(1 0 0 1 2.0195 52.1978)" fill="#FFFFFF" font-family="'ArialMT'" font-size="4.289">pH</text>
+<text transform="matrix(1 0 0 1 3.5957 55.0762)" fill="#FFFFFF" font-family="'ArialMT'" font-size="2.8593">5.0</text>
+</svg>

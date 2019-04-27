@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Schematic" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="217.17px"
+	 height="111.234px" viewBox="0 0 217.17 111.234" enable-background="new 0 0 217.17 111.234" xml:space="preserve">
+<text transform="matrix(1 0 0 1 74.6479 36.8943)" font-family="'DroidSans'" font-size="18">Generic</text>
+<text transform="matrix(1 0 0 1 75.4648 58.4949)" font-family="'DroidSans'" font-size="18">RGB LED</text>
+<text transform="matrix(1 0 0 1 88.9868 80.0945)" font-family="'DroidSans'" font-size="18">Strip </text>
+<text transform="matrix(1 0 0 1 182.749 69.1169)" font-family="'DroidSans'" font-size="10">R</text>
+<text transform="matrix(1 0 0 1 182.749 89.1287)" font-family="'DroidSans'" font-size="10">B</text>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="194.51" y1="87.734" x2="215.771" y2="87.734"/>
+	</g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="194.51" y1="66.477" x2="215.771" y2="66.477"/>
+	</g>
+</g>
+<rect x="23.299" y="1" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" width="170.701" height="108.834"/>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="194" y1="45.218" x2="215.26" y2="45.218"/>
+	</g>
+</g>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="194.51" y1="23.96" x2="215.771" y2="23.96"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 181.749 49.1169)" font-family="'DroidSans'" font-size="10">G</text>
+<text transform="matrix(1 0 0 1 168.8262 28.1228)" font-family="'DroidSans'" font-size="10">+12V</text>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.51" y1="87.734" x2="22.77" y2="87.734"/>
+	</g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.51" y1="66.477" x2="22.77" y2="66.477"/>
+	</g>
+</g>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1" y1="45.218" x2="22.26" y2="45.218"/>
+	</g>
+</g>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" x1="1.51" y1="23.96" x2="22.77" y2="23.96"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 26.8262 69.1228)" font-family="'DroidSans'" font-size="10">R</text>
+<text transform="matrix(1 0 0 1 26.8262 90.3806)" font-family="'DroidSans'" font-size="10">B</text>
+<text transform="matrix(1 0 0 1 26.8262 49.1228)" font-family="'DroidSans'" font-size="10">G</text>
+<text transform="matrix(1 0 0 1 26.8262 28.1228)" font-family="'DroidSans'" font-size="10">+12V</text>
+<rect id="connector3" x="0.343" y="86.439" fill="none" width="3.778" height="2.694"/>
+<rect id="connector4" x="213.653" y="22.604" fill="none" width="3.227" height="2.661"/>
+<rect id="connector5" x="213.115" y="43.995" fill="none" width="3.368" height="2.561"/>
+<rect id="connector6" x="213.788" y="65.184" fill="none" width="3.092" height="2.66"/>
+<rect id="connector7" x="213.25" y="86.34" fill="none" width="3.63" height="2.66"/>
+<rect id="connector0" x="0.143" y="22.882" fill="none" width="4.223" height="2.23"/>
+<rect id="connector1" x="0.052" y="44.196" fill="none" width="4.102" height="2.303"/>
+<rect id="connector2" x="0.479" y="65.205" fill="none" width="3.931" height="2.524"/>
+</svg>
