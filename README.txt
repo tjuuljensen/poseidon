@@ -1,6 +1,9 @@
-Poseidon - The Tank Monitor Application
+# Poseidon - The Tank Monitor Application
 
-README
+## Archived
 
-Wiki:
-https://github.com/tjuuljensen/poseidon/wiki
+This repository is archived as it is no longer maintained or in use.
+
+## README
+
+Wiki: https://github.com/tjuuljensen/poseidon/wiki
